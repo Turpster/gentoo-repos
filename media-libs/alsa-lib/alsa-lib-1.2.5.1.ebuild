@@ -10,7 +10,7 @@ DESCRIPTION="Advanced Linux Sound Architecture Library"
 HOMEPAGE="https://alsa-project.org/wiki/Main_Page"
 if [[ ${PV} == *_p* ]] ; then
 	# Please set correct commit ID for a snapshot release!!!
-	COMMIT="abe805ed6c7f38e48002e575535afd1f673b9bcd"
+	COMMIT="23a191a82c693456e61431ab699cddc1e5782a26"
 	SRC_URI="https://git.alsa-project.org/?p=${PN}.git;a=snapshot;h=${COMMIT};sf=tgz -> ${P}.tar.gz"
 	S="${WORKDIR}"/${PN}-${COMMIT:0:7}
 else
@@ -31,10 +31,6 @@ RDEPEND="python? ( ${PYTHON_DEPS} )
 	media-libs/alsa-ucm-conf
 "
 DEPEND="${RDEPEND}"
-
-PATCHES=(
-	"${FILESDIR}/${PN}-1.1.6-missing_files.patch" # bug #652422
-)
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
