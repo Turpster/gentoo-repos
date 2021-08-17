@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 PATCHES=(
-	"$(FILESDIR)/da157e9.patch"
+	"${FILESDIR}/da157e9.patch"
 )
 
 src_prepare() {
